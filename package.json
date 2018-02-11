@@ -1,5 +1,5 @@
 {
-  "name": "hetzner-cloud",
+  "name": "hetzner-cloud-api",
   "version": "1.0.0",
   "description": "Access to Hetzner Cloud API",
   "main": "index.js",
