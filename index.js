@@ -1,8 +1,21 @@
+/*
+- Refactor ErrorHandling!!
+- Refactor request.js
+- Refactor GetAllServer -> incl. name filtering
+- Test every action
+*/
+
 const Server = require('./lib/server');
-// const snapshot = require('./lib/snapshot');
 const paths = require('./lib/paths');
 const Image = require('./lib/image');
 const Iso = require('./lib/iso');
+const SSHKey = require('./lib/ssh_key');
+const Pricing = require('./lib/pricing');
+const Datacenter = require('./lib/datacenter');
+const FloatingIP = require('./lib/floating_ip');
+const Location = require('./lib/location');
+const Action = require('./lib/action');
+const ServerType = require('./lib/server_type');
 
 exports.setConfig = (options) => {
     this._token = options.token;
@@ -17,41 +30,13 @@ exports.getConfig = () => {
     };
 };
 
-exports.getAllServer = (callback) => {
-    Server.getAllServer(callback);
-};
-
-exports.getServerById = (id, callback) => {
-    Server.getServerById(id, callback);
-};
-
-exports.createServer = (name, serverType, image, callback, datacenter, location, startAfterCreate, sshKeys, userData) => {
-    Server.createServer(name, serverType, image, (result) => {
-        callback(result);
-    });
-};
-
-exports.getImages = (callback) => {
-    Image.getAllImages((result) => {
-        callback(result);
-    });
-};
-
-exports.getImageById = (id, callback) => {
-    Image.getImage(id, (result) => {
-        callback(result);
-    });
-};
-
-exports.getAllIsos = (callback) => {
-    Iso.getAllIsos((result) => {
-        callback(result);
-    });
-};
-
-exports.getIsoById = (id, callback) => {
-    Iso.getIso(id, (result) => {
-        callback(result);
-    });
-};
-
+exports.SSHKey = SSHKey;
+exports.Server = Server;
+exports.Image = Image;
+exports.Iso = Iso;
+exports.Pricing = Pricing;
+exports.Datacenter = Datacenter;
+exports.FloatingIP = FloatingIP;
+exports.Location = Location;
+exports.Action = Action;
+exports.ServerType = ServerType;
