@@ -16,6 +16,7 @@ const FloatingIP = require('./lib/floating_ip');
 const Location = require('./lib/location');
 const Action = require('./lib/action');
 const ServerType = require('./lib/server_type');
+const HError = require('./lib/herror');
 
 exports.setConfig = (options) => {
     this._token = options.token;
@@ -40,3 +41,4 @@ exports.FloatingIP = FloatingIP;
 exports.Location = Location;
 exports.Action = Action;
 exports.ServerType = ServerType;
+exports.HError = HError;
