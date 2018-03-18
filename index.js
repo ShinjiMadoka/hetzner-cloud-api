@@ -1,5 +1,4 @@
 /*
-- Refactor ErrorHandling!!
 - Refactor request.js
 - Refactor GetAllServer -> incl. name filtering
 - Test every action
