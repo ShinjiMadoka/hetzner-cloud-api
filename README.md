@@ -16,24 +16,20 @@ hcloud.setConfig({
 ```
 ### Request a server by id
 ```javascript
-hcloud.Server.getServerById(1, (error, location) => {
-    if (error) {
-        console.log(error);
-    } else {
-        console.log(location);
-    }
+hcloud.Server.getServerById(123).then((server) => {
+    console.log(server);
+}).catch((error) => {
+    console.log(error);
 });
 ```
 
 ### Create a server
 **Attentation! If your token is valid, this will create a server!**
 ```javascript
-hcloud.Server.createServer('CloudAppOne', 'cx11', 'debian-9', (error, result) => {
-    if (error) {
-        console.log(error);
-    } else {
-        console.log(result._options);
-    }
+hcloud.Server.createServer('CloudServer', 'cx11', 'debian-9').then((result) => {
+    console.log(result);
+}).catch((error) => {
+    console.log(error);
 });
 ```
 
